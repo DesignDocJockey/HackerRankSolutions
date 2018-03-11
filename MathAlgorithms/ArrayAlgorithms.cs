@@ -290,9 +290,10 @@ namespace MathAlgorithms
             if (nthLargest > array.Length)
                 return 0;
 
-            Array.Sort(array);
-            return array.Distinct()
-                        .ToArray()[(array.Length - 1) - nthLargest];
+            var distinctArray = array.Distinct().ToArray();
+            Array.Sort(distinctArray);
+            return distinctArray.Distinct()
+                        .ToArray()[(distinctArray.Length - 1) - nthLargest];
         }
 
         private void Swap(int[] array, int indexSwapFrom, int indexSwapTo)

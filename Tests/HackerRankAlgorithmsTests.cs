@@ -177,7 +177,7 @@ namespace Tests
             nthLargest.Should().Be(7);
 
             var arrayWithDuplicates = new int[15] { 10, 8, 9, 4, 3, 7, 2, 1, 5, 6, 1, 3, 3, 7, 9 };
-            nthLargest = ArrayAlgorithms.Instance.FindNthLargestElementInArray(3, array);
+            nthLargest = ArrayAlgorithms.Instance.FindNthLargestElementInArray(3, arrayWithDuplicates);
             nthLargest.Should().Be(7);
         }
 
