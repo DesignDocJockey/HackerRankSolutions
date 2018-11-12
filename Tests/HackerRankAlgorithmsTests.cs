@@ -181,5 +181,24 @@ namespace Tests
             nthLargest.Should().Be(7);
         }
 
+        [TestMethod]
+        public void FindFirstRecurringCharacter()
+        {
+            var txt = "ABCCDEFFGHHH";
+            var firstRecurringCharacter = StringAlgorithms.Instance.FindFirstRecurringCharacter(txt);
+            Assert.IsTrue(firstRecurringCharacter == 'C');
+        }
+
+        [TestMethod]
+        public void IsStringBaanced()
+        {
+            var txt = "{|afbcsd}";
+            var result = StringAlgorithms.Instance.DoesStringHaveClosingElement(txt);
+            Assert.IsTrue(result);
+
+            txt = "{|afbcsd}}";
+            result = StringAlgorithms.Instance.DoesStringHaveClosingElement(txt);
+            Assert.IsFalse(result);
+        }
     }
 }
