@@ -28,6 +28,17 @@ namespace MathAlgorithms
             return duplicates;
         }
 
+        public IEnumerable<int> FindDuplicateValuesInArrayCSharp(int[] array) {
+            if (array == null || array.Length == 0) {
+                return null;
+            }
+
+            var values = array.GroupBy(i => i)
+                              .Where(j => j.Count() > 1)
+                              .Select(k => k.Key);
+            return values;
+        } 
+
         public bool IsExpressionBalanced(string expression)
         {
             char openingParenthesis = '(', closingParenthesis = ')';

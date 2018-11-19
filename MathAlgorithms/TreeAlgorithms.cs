@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,8 @@ namespace MathAlgorithms
         private static readonly TreeAlgorithms _Instance = new TreeAlgorithms();
         public static TreeAlgorithms Instance => _Instance;
 
-      
+
     }
+
+  
 }

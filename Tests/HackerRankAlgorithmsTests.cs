@@ -167,6 +167,11 @@ namespace Tests
             duplicates.Contains(1).Should().BeTrue();
             duplicates.Contains(3).Should().BeTrue();
             duplicates.Contains(7).Should().BeTrue();
+
+            var duplicatesCSharp = ArrayAlgorithms.Instance.FindDuplicateValuesInArrayCSharp(array);
+            duplicatesCSharp.Contains(1).Should().BeTrue();
+            duplicatesCSharp.Contains(3).Should().BeTrue();
+            duplicatesCSharp.Contains(7).Should().BeTrue();
         }
 
         [TestMethod]
@@ -190,7 +195,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void IsStringBaanced()
+        public void IsStringBalanced()
         {
             var txt = "{|afbcsd}";
             var result = StringAlgorithms.Instance.DoesStringHaveClosingElement(txt);
@@ -199,6 +204,32 @@ namespace Tests
             txt = "{|afbcsd}}";
             result = StringAlgorithms.Instance.DoesStringHaveClosingElement(txt);
             Assert.IsFalse(result);
+        }
+
+     
+        [TestMethod]
+        public void ItAppendsToTheEndOfALinkedList()
+        {
+            var parentNode = new LinkedListNode(18);
+            var linkedList = new LinkedList(parentNode);
+            linkedList.Append(12);
+            linkedList.Append(9);
+            linkedList.Append(7);
+            linkedList.Count.Should().Be(4);
+            linkedList.Display();
+        }
+
+        [TestMethod]
+        public void ItRemovesAnItemAtTheEndOfALinkedList()
+        {
+            var parentNode = new LinkedListNode(18);
+            var linkedList = new LinkedList(parentNode);
+            linkedList.Append(12);
+            linkedList.Append(9);
+            linkedList.Append(7);
+            linkedList.Remove();
+            linkedList.Count.Should().Be(3);
+            linkedList.Display();
         }
     }
 }
